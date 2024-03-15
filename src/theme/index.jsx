@@ -9,9 +9,9 @@ import { useLocales } from 'src/locales';
 
 import { useSettingsContext } from 'src/components/settings';
 
+import { shadows } from './shadows';
 // system
 import { palette } from './palette';
-import { shadows } from './shadows';
 import { typography } from './typography';
 // options
 import RTL from './options/right-to-left';

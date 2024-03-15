@@ -108,6 +108,7 @@ export const paths = {
     permission: `${ROOTS.DASHBOARD}/permission`,
     general: {
       kpiDashBoard: `${ROOTS.DASHBOARD}/kpi-dashboard`,
+      Sales: `${ROOTS.DASHBOARD}/sales-dashboard`,
       app: `${ROOTS.DASHBOARD}/app`,
       ecommerce: `${ROOTS.DASHBOARD}/ecommerce`,
       analytics: `${ROOTS.DASHBOARD}/analytics`,

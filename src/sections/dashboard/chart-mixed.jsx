@@ -4,35 +4,36 @@ import Chart, { useChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 
-export default function ChartMixed({ series }) {
+export default function ChartMixed({ series, colors }) {
   const chartOptions = useChart({
+    colors,
     stroke: {
-      width: [0, 2, 3],
+      width: [1, 2, 3],
     },
     plotOptions: {
       bar: { columnWidth: '20%' },
     },
     fill: {
-      type: ['solid', 'gradient', 'solid'],
+      type: ['solid', 'solid', 'solid'],
     },
-    labels: [
-      'January',
-      'febuary',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'September',
-      'October',
-      'November',
-      'December',
-    ],
     xaxis: {
-      type: 'month',
+      categories: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ],
     },
     yaxis: {
-      title: { text: 'Points' },
+      title: { text: 'Sales' },
       min: 0,
     },
     tooltip: {
@@ -41,7 +42,7 @@ export default function ChartMixed({ series }) {
       y: {
         formatter: (value) => {
           if (typeof value !== 'undefined') {
-            return `${value.toFixed(0)} points`;
+            return `${value.toFixed(0)} k sales`;
           }
           return value;
         },
@@ -55,5 +56,6 @@ export default function ChartMixed({ series }) {
 }
 
 ChartMixed.propTypes = {
+  colors: PropTypes.array,
   series: PropTypes.array,
 };

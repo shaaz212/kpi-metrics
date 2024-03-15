@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
+// import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { alpha, useTheme } from '@mui/material/styles';
 
-import { fNumber, fPercent, fShortenNumber } from 'src/utils/format-number';
+import { fNumber, fShortenNumber } from 'src/utils/format-number';
 
-import Iconify from 'src/components/iconify';
+// import Iconify from 'src/components/iconify';
 import Chart, { useChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
@@ -21,6 +21,8 @@ export default function DashBoardWidgetImage({ icon, title, percent, total, char
     series,
     options,
   } = chart;
+
+  // console.log('colors..............', colors);
 
   const chartOptions = useChart({
     colors: [colors[1]],
@@ -58,36 +60,36 @@ export default function DashBoardWidgetImage({ icon, title, percent, total, char
     ...options,
   });
 
-  const renderTrending = (
-    <Stack direction="row" alignItems="center" sx={{ mt: 2, mb: 1 }}>
-      <Iconify
-        icon={percent < 0 ? 'eva:trending-down-fill' : 'eva:trending-up-fill'}
-        sx={{
-          mr: 1,
-          p: 0.5,
-          width: 16,
-          height: 16,
-          borderRadius: '50%',
-          color: 'success.main',
-          bgcolor: alpha(theme.palette.success.main, 0.16),
-          ...(percent < 0 && {
-            color: 'error.main',
-            bgcolor: alpha(theme.palette.error.main, 0.16),
-          }),
-        }}
-      />
+  // const renderTrending = (
+  //   <Stack direction="row" alignItems="center" sx={{ mt: 2, mb: 1 }}>
+  //     <Iconify
+  //       icon={percent < 0 ? 'eva:trending-down-fill' : 'eva:trending-up-fill'}
+  //       sx={{
+  //         mr: 1,
+  //         p: 0.5,
+  //         width: 16,
+  //         height: 16,
+  //         borderRadius: '50%',
+  //         color: 'success.main',
+  //         bgcolor: alpha(theme.palette.success.main, 0.16),
+  //         ...(percent < 0 && {
+  //           color: 'error.main',
+  //           bgcolor: alpha(theme.palette.error.main, 0.16),
+  //         }),
+  //       }}
+  //     />
 
-      <Typography variant="subtitle2" component="div" noWrap>
-        {percent > 0 && '+'}
+  //     <Typography variant="subtitle2" component="div" noWrap>
+  //       {percent > 0 && '+'}
 
-        {fPercent(percent)}
+  //       {fPercent(percent)}
 
-        <Box component="span" sx={{ color: 'text.secondary', typography: 'subtitle2' }}>
-          {' than last week'}
-        </Box>
-      </Typography>
-    </Stack>
-  );
+  //       <Box component="span" sx={{ color: 'text.secondary', typography: 'subtitle2' }}>
+  //         {' than last week'}
+  //       </Box>
+  //     </Typography>
+  //   </Stack>
+  // );
 
   return (
     <Card sx={{ display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>

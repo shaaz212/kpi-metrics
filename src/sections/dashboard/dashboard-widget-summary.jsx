@@ -3,23 +3,30 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
-import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
-import { fNumber, fPercent } from 'src/utils/format-number';
+import { fPercent, fShortenNumber } from 'src/utils/format-number';
 
 import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-export default function DashBoardWidgetSummary({ title, percent, total, chart, sx, ...other }) {
-  const theme = useTheme();
+export default function DashBoardWidgetSummary({
+  title,
+  subtitle,
+  percent,
+  total,
+  chart,
+  sx,
+  ...other
+}) {
+  // const theme = useTheme();
 
-  const {
-    colors = [theme.palette.primary.light, theme.palette.primary.main],
-    series,
-    options,
-  } = chart;
+  // const {
+  //   colors = [theme.palette.primary.light, theme.palette.primary.main],
+  //   series,
+  //   options,
+  // } = chart;
 
   // const chartOptions = {
   //   colors: colors.map((colr) => colr[1]),
@@ -61,10 +68,16 @@ export default function DashBoardWidgetSummary({ title, percent, total, chart, s
       <Box sx={{ flexGrow: 1 }}>
         <Typography variant="subtitle2">{title}</Typography>
 
-        <Stack direction="row" alignItems="center" justifyContent="space-between" gap={2} mt={2.2}>
-          <Typography variant="subtitle2">{fNumber(total)}</Typography>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          gap={1.5}
+          mt={0.4}
+        >
+          <Typography variant="subtitle1">{fShortenNumber(total)}</Typography>
 
-          <Stack direction="row" sx={{ mt: 2, mb: 1 }} gap={1}>
+          <Stack direction="row" sx={{ mt: 1, mb: 0.9 }} gap={1}>
             <Iconify
               width={20}
               icon={
@@ -87,6 +100,10 @@ export default function DashBoardWidgetSummary({ title, percent, total, chart, s
             </Typography>
           </Stack>
         </Stack>
+
+        <Typography variant="subtitle2" sx={{ opacity: 0.64 }}>
+          {subtitle}
+        </Typography>
       </Box>
 
       {/* <Chart
@@ -106,5 +123,6 @@ DashBoardWidgetSummary.propTypes = {
   percent: PropTypes.number,
   sx: PropTypes.object,
   title: PropTypes.string,
+  subtitle: PropTypes.string,
   total: PropTypes.number,
 };
