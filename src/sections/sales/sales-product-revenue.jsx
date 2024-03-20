@@ -53,7 +53,7 @@ function ProgressItem({ progress }) {
         value={progress.value}
         color={
           (progress.label === 'Acronis' && 'warning') ||
-          (progress.label === 'bitdefender' && 'secondary') ||
+          (progress.label === 'bitdefender' && 'error') ||
           (progress.label === 'NEVERFAIL' && 'info') ||
           (progress.label === 'DropSuite' && 'warning') ||
           (progress.label === 'zimbra' && 'primary')

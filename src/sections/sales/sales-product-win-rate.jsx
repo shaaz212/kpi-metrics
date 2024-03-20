@@ -43,12 +43,7 @@ export default function SalesProductWinRate({ title, subheader, chart, ...other 
         enabled: true,
       },
     },
-    colors: [
-      theme.palette.primary.main,
-      theme.palette.warning.main,
-      theme.palette.info.main,
-      theme.palette.secondary.main,
-    ],
+    colors,
     labels: series.map((i) => i.label),
     stroke: {
       colors: [theme.palette.background.paper],

@@ -81,7 +81,7 @@ export default function SalesWinRate({ chart, ...other }) {
   return (
     <Card {...other}>
       <CardContent>
-        <Stack direction="row">
+        <Stack direction="row" justifyContent="space-between">
           <Typography>Win Rate</Typography>
           {series.map((item, index) => (
             <Stack
