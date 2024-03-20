@@ -32,14 +32,14 @@ export default function SalesPersonView() {
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
       <Grid container spacing={1}>
         <Grid xs={6} md={2.4}>
-          <Card>
+          <Card sx={{ height: 135 }}>
             <CardContent>
               <SalesWidgetSummary title="Total Revenue" percent={2.6} total={7653} />
             </CardContent>
           </Card>
         </Grid>
         <Grid xs={6} md={2.4}>
-          <Card>
+          <Card sx={{ height: 135 }}>
             <CardContent>
               <SalesWidgetSummary title="Avg Revenue Sales" percent={-2.6} total={7653} />
             </CardContent>

@@ -79,7 +79,7 @@ export default function SalesWinRate({ chart, ...other }) {
   };
 
   return (
-    <Card {...other}>
+    <Card sx={{ height: 135 }} {...other}>
       <CardContent>
         <Stack direction="row" justifyContent="space-between">
           <Typography>Win Rate</Typography>

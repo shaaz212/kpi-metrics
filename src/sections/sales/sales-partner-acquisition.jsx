@@ -60,7 +60,7 @@ export default function SalesPartnerAcquisition({ title, percent, total, chart, 
   };
 
   return (
-    <Card sx={{ alignItems: 'center', p: 3, ...sx }} {...other}>
+    <Card sx={{ height: 135, alignItems: 'center', p: 3, ...sx }} {...other}>
       <Box>
         <Typography variant="subtitle1">{title}</Typography>
       </Box>

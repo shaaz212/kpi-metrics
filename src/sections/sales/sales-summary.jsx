@@ -56,7 +56,7 @@ export default function SalesSummary({ title, subtitle, percent, total, chart, s
   // };
 
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>
+    <Card sx={{ height: 135, display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>
       <Box sx={{ flexGrow: 1 }}>
         <Typography variant="subtitle1">{title}</Typography>
 
