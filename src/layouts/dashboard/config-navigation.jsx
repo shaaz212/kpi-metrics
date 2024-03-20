@@ -63,11 +63,6 @@ export function useNavData() {
             icon: ICONS.dashboard,
           },
           {
-            title: t('Sales'),
-            path: paths.dashboard.general.Sales,
-            icon: ICONS.ecommerce,
-          },
-          {
             title: t('app'),
             path: paths.dashboard.root,
             icon: ICONS.dashboard,
@@ -105,6 +100,17 @@ export function useNavData() {
       {
         subheader: t('management'),
         items: [
+          // SALES
+          {
+            title: t('Sales'),
+            path: paths.dashboard.user.root,
+            icon: ICONS.ecommerce,
+            children: [
+              { title: t('person'), path: paths.dashboard.sales.root },
+              { title: t('product'), path: paths.dashboard.sales.product },
+            ],
+          },
+
           // USER
           {
             title: t('user'),

@@ -1,16 +1,16 @@
 import { Helmet } from 'react-helmet-async';
 
-import { SalesView } from 'src/sections/sales/view';
+import SalesPersonView from 'src/sections/sales/view/sales-person-view';
 
 // section
 
-export default function OverviewSalesDashboardPage() {
+export default function SalesPersonDashboardPage() {
   return (
     <>
       <Helmet>
         <title>Sales</title>
       </Helmet>
-      <SalesView />
+      <SalesPersonView />
     </>
   );
 }
