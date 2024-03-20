@@ -5,8 +5,6 @@ import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
 import { Typography, CardContent } from '@mui/material';
 
-import { useResponsive } from 'src/hooks/use-responsive';
-
 import Chart, { useChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
@@ -14,7 +12,7 @@ import Chart, { useChart } from 'src/components/chart';
 export default function SalesWinRate({ chart, ...other }) {
   const theme = useTheme();
 
-  const smUp = useResponsive('up', 'sm');
+  // const smUp = useResponsive('up', 'sm');
 
   const {
     colors = [

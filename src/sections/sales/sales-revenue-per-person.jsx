@@ -23,6 +23,7 @@ export default function SalesRevenuePerPerson({ series }) {
       bar: {
         horizontal: true,
         columnWidth: '10%',
+        barHeight: '50%',
       },
     },
     stroke: {

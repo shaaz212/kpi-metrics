@@ -75,11 +75,11 @@ export default function SalesProductView() {
             chart={{
               colors: theme.palette.warning.main,
               series: [
-                { label: 'Aishwarya', value: 400 },
-                { label: 'Akhila', value: 430 },
-                { label: 'Jithin', value: 448 },
-                { label: 'Sajan', value: 470 },
-                { label: 'Anni', value: 448 },
+                { label: 'Acronis', value: 400 },
+                { label: 'Bit defender', value: 430 },
+                { label: 'DropSuite', value: 448 },
+                { label: 'NEVERFAIL', value: 470 },
+                { label: 'Zimbra', value: 448 },
               ],
             }}
           />

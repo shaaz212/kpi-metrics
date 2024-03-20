@@ -25,7 +25,7 @@ import SalesPartnerAcquisition from '../sales-partner-acquisition';
 export default function SalesPersonView() {
   const theme = useTheme();
 
-  const GB = 1000000000 * 24;
+  // const GB = 1000000000 * 24;
 
   const settings = useSettingsContext();
   return (
