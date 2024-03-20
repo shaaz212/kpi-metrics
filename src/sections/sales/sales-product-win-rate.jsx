@@ -35,13 +35,20 @@ export default function SalesProductWinRate({ title, subheader, chart, ...other 
 
   const chartSeries = series.map((i) => i.value);
 
+  // console.log('colors.......', colors);
+
   const chartOptions = useChart({
     chart: {
       sparkline: {
         enabled: true,
       },
     },
-    colors,
+    colors: [
+      theme.palette.primary.main,
+      theme.palette.warning.main,
+      theme.palette.info.main,
+      theme.palette.secondary.main,
+    ],
     labels: series.map((i) => i.label),
     stroke: {
       colors: [theme.palette.background.paper],
