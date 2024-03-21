@@ -35,40 +35,35 @@ export default function DashBoardView() {
 
   return (
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         <Grid xs={12} md={2}>
-          <Stack direction={{ xs: 'row', md: 'column' }} spacing={1}>
-            <DashBoardWidgetSummary
-              title="Quaterly Sales"
-              subtitle="Quarter - 1"
-              percent={2.6}
-              total={18765231}
-              // chart={
-              //   {
-              //     // series: [5, 18, 12, 51, 68, 11, 39, 37, 27, 20],
-              //   }
-              // }
-            />
-            <DashBoardWidgetSummary
-              title="Monthly Sales"
-              subtitle="March"
-              percent={-0.2}
-              total={4876314}
-              // chart={{
-              //   colors: [theme.palette.info.light, theme.palette.info.main],
-              //   series: [20, 41, 63, 33, 28, 35, 50, 46, 11, 26],
-              // }}
-            />
-            <DashBoardWidgetSummary
-              title="Ticket Closed"
-              subtitle="2024"
-              percent={0.1}
-              total={678123}
-              // chart={{
-              //   colors: [theme.palette.warning.light, theme.palette.warning.main],
-              //   series: [8, 9, 31, 8, 16, 37, 8, 33, 46, 31],
-              // }}
-            />
+          <Stack>
+            <Grid container spacing={1}>
+              <Grid xs={6} md={12}>
+                <DashBoardWidgetSummary
+                  title="Quaterly Sales"
+                  subtitle="Q-1"
+                  percent={2.6}
+                  total={18765231}
+                />
+              </Grid>
+              <Grid xs={6} md={12}>
+                <DashBoardWidgetSummary
+                  title="Monthly Sales"
+                  subtitle="Current Month"
+                  percent={-0.2}
+                  total={4876314}
+                />
+              </Grid>
+              <Grid xs={12} md={12}>
+                <DashBoardWidgetSummary
+                  title="Ticket Closed"
+                  subtitle="Current Year"
+                  percent={0.1}
+                  total={678123}
+                />
+              </Grid>
+            </Grid>
           </Stack>
         </Grid>
         <Grid xs={12} md={7}>
@@ -133,39 +128,53 @@ export default function DashBoardView() {
           />
         </Grid>
         <Grid xs={12} md={3}>
-          <Stack direction="column" spacing={2}>
-            <DashBoardWidgetImage
-              title="Total Calls"
-              percent={-0.1}
-              total={12831}
-              icon={<Iconify icon="solar:phone-bold" width={24} sx={{ color: 'success.main' }} />}
-              chart={{
-                colors: [theme.palette.success.light, theme.palette.success.main],
-                series: [56, 47, 80],
-              }}
-            />
-            <DashBoardWidgetImage
-              title="Total Mails"
-              percent={2.6}
-              total={12828}
-              icon={
-                <Iconify icon="fluent:mail-24-filled" width={24} sx={{ color: 'warning.main' }} />
-              }
-              chart={{
-                colors: [theme.palette.warning.light, theme.palette.warning.main],
-                series: [40, 70, 75, 70, 50, 28, 7, 64, 38, 27],
-              }}
-            />
-            <DashBoardWidgetImage
-              title="Total Meeting"
-              percent={2.6}
-              total={16182}
-              icon={<img alt="icon" src="/assets/icons/glass/ic_glass_users.png" />}
-              chart={{
-                colors: [theme.palette.info.light, theme.palette.info.main],
-                series: [22, 8, 35, 50, 82, 84, 77, 12, 87, 43],
-              }}
-            />
+          <Stack>
+            <Grid container spacing={1}>
+              <Grid xs={6} md={12}>
+                <DashBoardWidgetImage
+                  title="Total Calls"
+                  percent={-0.1}
+                  total={12831}
+                  icon={
+                    <Iconify icon="solar:phone-bold" width={24} sx={{ color: 'success.main' }} />
+                  }
+                  chart={{
+                    colors: [theme.palette.success.light, theme.palette.success.main],
+                    series: [56, 47, 38, 27],
+                  }}
+                />
+              </Grid>
+              <Grid xs={6} md={12}>
+                <DashBoardWidgetImage
+                  title="Total Mails"
+                  percent={2.6}
+                  total={12828}
+                  icon={
+                    <Iconify
+                      icon="fluent:mail-24-filled"
+                      width={24}
+                      sx={{ color: 'warning.main' }}
+                    />
+                  }
+                  chart={{
+                    colors: [theme.palette.warning.light, theme.palette.warning.main],
+                    series: [40, 70, 75, 70, 50, 28, 7, 64, 38, 27],
+                  }}
+                />
+              </Grid>
+              <Grid xs={12} md={12}>
+                <DashBoardWidgetImage
+                  title="Total Meeting"
+                  percent={2.6}
+                  total={16182}
+                  icon={<img alt="icon" src="/assets/icons/glass/ic_glass_users.png" />}
+                  chart={{
+                    colors: [theme.palette.info.light, theme.palette.info.main],
+                    series: [22, 8, 35, 50, 82, 84, 77, 12, 87, 43],
+                  }}
+                />
+              </Grid>
+            </Grid>
           </Stack>
         </Grid>
         <Grid xs={12} md={6}>

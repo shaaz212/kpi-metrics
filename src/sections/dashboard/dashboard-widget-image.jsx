@@ -92,7 +92,7 @@ export default function DashBoardWidgetImage({ icon, title, percent, total, char
   // );
 
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>
+    <Card sx={{ height: 131, display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>
       <Box sx={{ flexGrow: 1 }}>
         {icon && <Box sx={{ width: 24, height: 24, mb: 1 }}>{icon}</Box>}
         <Typography variant="subtitle1">{fShortenNumber(total)}</Typography>
