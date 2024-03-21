@@ -101,7 +101,7 @@ export function useNavData() {
           // SALES
           {
             title: t('Sales'),
-            path: paths.dashboard.user.root,
+            path: paths.dashboard.sales.root,
             icon: ICONS.ecommerce,
             children: [
               { title: t('person'), path: paths.dashboard.sales.root },

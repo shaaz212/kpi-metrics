@@ -51,7 +51,7 @@ export default function DashBoardView() {
             />
             <DashBoardWidgetSummary
               title="Monthly Sales"
-              subtitle="Current month"
+              subtitle="March"
               percent={-0.2}
               total={4876314}
               // chart={{
@@ -61,7 +61,7 @@ export default function DashBoardView() {
             />
             <DashBoardWidgetSummary
               title="Ticket Closed"
-              subtitle="Total tickets"
+              subtitle="2024"
               percent={0.1}
               total={678123}
               // chart={{
@@ -73,7 +73,7 @@ export default function DashBoardView() {
         </Grid>
         <Grid xs={12} md={7}>
           <DashBoardStatistics
-            title="Sales Data"
+            title="Total Revenue"
             subheader="2021-2023 (In USD)"
             colors={totalSalesColors}
             chart={{

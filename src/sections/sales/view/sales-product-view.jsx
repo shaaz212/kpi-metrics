@@ -37,18 +37,18 @@ export default function SalesProductView() {
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
       <Grid container spacing={1}>
         <Grid xs={12} md={4}>
-          <SalesProductRevenue title="Sales Overview" data={data} />
+          <SalesProductRevenue title="Total Revenue" data={data} />
         </Grid>
         <Grid xs={12} md={5}>
           <Card sx={{ height: 412 }}>
-            <CardHeader title="Charn Rate Trend Analysis" />
+            <CardHeader title="Churn Rate Trend Analysis" />
             <CardContent>
               <SalesProductCharnRate
                 series={[
-                  { name: 'Charn Rate', data: [31, 40, 28, 51, 42, 109, 100, 62, 81, 29, 12, 19] },
+                  { name: 'Churn Rate', data: [31, 40, 28, 51, 42, 109, 100, 62, 81, 29, -12, 19] },
                   {
                     name: 'Moving Avg\n(3 months)',
-                    data: [11, 22, 35, 32, 34, 52, 41, 18, 73, 22, 93, 82],
+                    data: [11, 22, 35, 32, 34, 52, 41, -18, 73, 22, 93, 82],
                   },
                 ]}
               />
@@ -70,7 +70,7 @@ export default function SalesProductView() {
         </Grid>
         <Grid xs={12} md={3}>
           <SalesProductTotalDeal
-            title="Total Deals won per product"
+            title="Total Deals Won"
             // subheader="(+43%) than last year"
             chart={{
               colors: theme.palette.warning.main,
@@ -86,16 +86,16 @@ export default function SalesProductView() {
         </Grid>
         <Grid xs={12} md={5}>
           <Card sx={{ height: 412 }}>
-            <CardHeader title="Total v/s Unique Partners" />
+            <CardHeader title="Total Partners v/s Unique " />
             <CardContent>
               <SalesProductPartners
                 series={[
                   {
-                    name: 'Total Deals',
+                    name: 'Total',
                     data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 87, 76, 67],
                   },
                   {
-                    name: 'Total Partners',
+                    name: 'Unique',
                     data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 72, 66, 97],
                   },
                 ]}

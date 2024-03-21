@@ -80,7 +80,7 @@ export default function SalesPersonView() {
               height: 412,
             }}
           >
-            <CardHeader title="Revenue per person" />
+            <CardHeader title="Total Revenue" />
             <CardContent>
               <SalesRevenuePerPerson
                 series={[
@@ -95,7 +95,7 @@ export default function SalesPersonView() {
         </Grid>
         <Grid xs={12} md={5}>
           <SalesRevenueGrowthRate
-            title="Revenue Growth Rate"
+            title="Total Revenue Growth"
             // subheader="(+43%) than last year"
             chart={{
               labels: [
@@ -144,7 +144,7 @@ export default function SalesPersonView() {
         </Grid>
         <Grid xs={12} md={4.5}>
           <SalesPersonRates
-            title="Sales Per Person"
+            title="Avg Revenue"
             // subheader="(+43%) than last year"
             chart={{
               colors: theme.palette.warning.main,
@@ -185,10 +185,10 @@ export default function SalesPersonView() {
                   data: [23, 11, 22, 27],
                 },
                 {
-                  name: 'Trent',
+                  name: 'Trend',
                   type: 'line',
                   fill: 'solid',
-                  data: [30, 25, -10, 30],
+                  data: [30, 25, 10, 30],
                 },
               ],
             }}
