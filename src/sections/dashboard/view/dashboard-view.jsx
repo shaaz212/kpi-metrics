@@ -37,7 +37,7 @@ export default function DashBoardView() {
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
       <Grid container spacing={2}>
         <Grid xs={12} md={2}>
-          <Stack direction="column" spacing={1}>
+          <Stack direction={{ xs: 'row', md: 'column' }} spacing={1}>
             <DashBoardWidgetSummary
               title="Quaterly Sales"
               subtitle="Quarter - 1"
