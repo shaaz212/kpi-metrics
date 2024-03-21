@@ -37,7 +37,22 @@ export default function SalesProductView() {
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
       <Grid container spacing={1}>
         <Grid xs={12} md={4}>
-          <SalesProductRevenue title="Total Revenue" data={data} />
+          <Card
+            sx={{
+              height: 412,
+            }}
+          >
+            <CardHeader title="Total Revenue" />
+            <CardContent>
+              <SalesProductRevenue
+                series={[
+                  { name: 'MSP', data: [44, 55, 41, 67] },
+                  { name: 'New', data: [13, 23, 20, 13] },
+                  { name: 'Renewal', data: [11, 17, 15, 21] },
+                ]}
+              />
+            </CardContent>
+          </Card>
         </Grid>
         <Grid xs={12} md={5}>
           <Card sx={{ height: 412 }}>
