@@ -29,7 +29,7 @@ export default function SalesProductTotalDeal({ title, subheader, chart, ...othe
     plotOptions: {
       bar: {
         horizontal: true,
-        barHeight: '20%',
+        barHeight: '30%',
         borderRadius: 2,
       },
     },

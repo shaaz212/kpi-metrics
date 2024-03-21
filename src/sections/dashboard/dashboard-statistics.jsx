@@ -26,8 +26,8 @@ export default function DashBoardStatistics({ title, colors, subheader, chart, .
       show: true,
       // curve: 'straight',
       lineCap: 'butt',
-      colors: undefined,
-      width: [3, 3, 3],
+      colors: ['transparent'],
+      width: [1, 2, 3],
       dashArray: 0,
     },
     xaxis: {
@@ -36,6 +36,11 @@ export default function DashBoardStatistics({ title, colors, subheader, chart, .
     tooltip: {
       y: {
         formatter: (value) => `$${value}`,
+      },
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '60%',
       },
     },
     ...options,

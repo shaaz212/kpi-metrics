@@ -25,14 +25,6 @@ export default function SalesProductView() {
 
   const settings = useSettingsContext();
 
-  const data = [
-    { label: 'Acronis', totalAmount: 9714, value: 13.6 },
-    { label: 'bitdefender', totalAmount: 9714, value: 26.6 },
-    { label: 'NEVERFAIL', totalAmount: 9714, value: 13.6 },
-    { label: 'DropSuite', totalAmount: 9714, value: 26.6 },
-    { label: 'zimbra', totalAmount: 9714, value: 26.6 },
-  ];
-
   return (
     <Container maxWidth={settings.themeStretch ? false : 'xl'}>
       <Grid container spacing={1}>
@@ -42,7 +34,7 @@ export default function SalesProductView() {
               height: 412,
             }}
           >
-            <CardHeader title="Total Revenue" />
+            <CardHeader title="Product Sales by Type" />
             <CardContent>
               <SalesProductRevenue
                 series={[
