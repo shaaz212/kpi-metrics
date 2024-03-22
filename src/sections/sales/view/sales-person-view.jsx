@@ -93,19 +93,6 @@ export default function SalesPersonView() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid xs={12} md={3}>
-          <SalesWinRatePie
-            title="Win Rate"
-            chart={{
-              series: [
-                { label: 'Aiswarya Giri', value: 4344 },
-                { label: 'vivian', value: 5435 },
-                { label: 'jithin', value: 1443 },
-                { label: 'akhila', value: 4443 },
-              ],
-            }}
-          />
-        </Grid>
         <Grid xs={12} md={4.5}>
           <Card
             sx={{
@@ -126,6 +113,19 @@ export default function SalesPersonView() {
             </CardContent>
           </Card>
         </Grid>
+        <Grid xs={12} md={3}>
+          <SalesWinRatePie
+            title="Win Rate"
+            chart={{
+              series: [
+                { label: 'Aiswarya Giri', value: 4344 },
+                { label: 'vivian', value: 5435 },
+                { label: 'jithin', value: 1443 },
+                { label: 'akhila', value: 4443 },
+              ],
+            }}
+          />
+        </Grid>
         <Grid xs={12} md={4.5}>
           <SalesPersonRates
             title="Avg Revenue"
@@ -138,19 +138,6 @@ export default function SalesPersonView() {
                 { label: 'Jithin', value: 448 },
                 { label: 'Sajan', value: 470 },
                 { label: 'Anni', value: 448 },
-              ],
-            }}
-          />
-        </Grid>
-        <Grid xs={12} md={3}>
-          <WinRatePie
-            title="New Partner Acquisition"
-            chart={{
-              series: [
-                { label: 'Aiswarya', value: 12244 },
-                { label: 'Vivian', value: 53345 },
-                { label: 'jithin', value: 44313 },
-                { label: 'akhila', value: 78343 },
               ],
             }}
           />
@@ -174,6 +161,19 @@ export default function SalesPersonView() {
                   fill: 'solid',
                   data: [30, 25, 10, 30],
                 },
+              ],
+            }}
+          />
+        </Grid>
+        <Grid xs={12} md={3}>
+          <WinRatePie
+            title="New Partner Acquisition"
+            chart={{
+              series: [
+                { label: 'Aiswarya', value: 12244 },
+                { label: 'Vivian', value: 53345 },
+                { label: 'jithin', value: 44313 },
+                { label: 'akhila', value: 78343 },
               ],
             }}
           />

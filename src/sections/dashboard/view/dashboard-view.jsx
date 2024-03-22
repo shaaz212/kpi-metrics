@@ -139,7 +139,7 @@ export default function DashBoardView() {
                   ],
                 },
                 {
-                  type: 'Line Chart',
+                  type: 'Area Chart',
                   model: 'area',
                   data: [
                     {
