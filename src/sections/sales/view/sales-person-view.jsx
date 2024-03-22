@@ -80,7 +80,7 @@ export default function SalesPersonView() {
               height: 412,
             }}
           >
-            <CardHeader title="Total Revenue" />
+            <CardHeader title="Total Revenue by Product" />
             <CardContent>
               <SalesRevenuePerPerson
                 series={[

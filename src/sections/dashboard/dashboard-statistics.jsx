@@ -27,7 +27,7 @@ export default function DashBoardStatistics({ title, colors, subheader, chart, .
       // curve: 'straight',
       lineCap: 'butt',
       colors: ['transparent'],
-      width: [1, 2, 3],
+      width: [2, 2, 3],
       dashArray: 0,
     },
     xaxis: {
