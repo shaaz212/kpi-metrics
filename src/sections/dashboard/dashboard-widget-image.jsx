@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
 // import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -92,25 +93,27 @@ export default function DashBoardWidgetImage({ icon, title, percent, total, char
   // );
 
   return (
-    <Card sx={{ height: 131, display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>
-      <Box sx={{ flexGrow: 1 }}>
-        {icon && <Box sx={{ width: 24, height: 24, mb: 1 }}>{icon}</Box>}
-        <Typography variant="subtitle1">{fShortenNumber(total)}</Typography>
+    <Card sx={{ height: 131, p: 3, ...sx }} {...other}>
+      <Stack direction="row" alignItems="center">
+        <Box sx={{ flexGrow: 1 }}>
+          {icon && <Box sx={{ width: 24, height: 24, mb: 1 }}>{icon}</Box>}
+          <Typography variant="subtitle1">{fShortenNumber(total)}</Typography>
+        </Box>
 
+        <Chart
+          dir="ltr"
+          type="line"
+          series={[{ data: series }]}
+          options={chartOptions}
+          width={92}
+          height={36}
+        />
+      </Stack>
+      <Box marginTop={1}>
         <Typography variant="subtitle2" sx={{ opacity: 0.64 }}>
           {title}
         </Typography>
-        {/* {renderTrending} */}
       </Box>
-
-      <Chart
-        dir="ltr"
-        type="line"
-        series={[{ data: series }]}
-        options={chartOptions}
-        width={92}
-        height={36}
-      />
     </Card>
   );
 }
@@ -123,3 +126,7 @@ DashBoardWidgetImage.propTypes = {
   title: PropTypes.string,
   total: PropTypes.number,
 };
+
+// <Typography variant="subtitle2" sx={{ opacity: 0.64 }}>
+//           {title}
+//         </Typography>
