@@ -94,40 +94,24 @@ export default function SalesPersonView() {
           </Card>
         </Grid>
         <Grid xs={12} md={5}>
-          <SalesRevenueGrowthRate
-            title="Total Revenue Growth"
-            // subheader="(+43%) than last year"
-            chart={{
-              labels: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec',
-              ],
-              series: [
-                {
-                  name: 'Sales',
-                  type: 'column',
-                  fill: 'solid',
-                  data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
-                },
-                {
-                  name: 'Trent',
-                  type: 'line',
-                  fill: 'solid',
-                  data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
-                },
-              ],
+          <Card
+            sx={{
+              height: 412,
             }}
-          />
+          >
+            <CardHeader title="Total Revenue by Region" />
+            <CardContent>
+              <SalesRevenuePerPerson
+                series={[
+                  { name: 'UAE', data: [44, 55, 41, 67, 22] },
+                  { name: 'Qatar', data: [13, 23, 20, 13, 27] },
+                  { name: 'Kuwait', data: [11, 17, 15, 21, 14] },
+                  { name: 'Jordan', data: [21, 25, 13, 22, 8] },
+                ]}
+                title="vertical"
+              />
+            </CardContent>
+          </Card>
         </Grid>
         <Grid xs={12} md={3}>
           <SalesWinRatePie

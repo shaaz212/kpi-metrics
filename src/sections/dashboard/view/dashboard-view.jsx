@@ -39,7 +39,7 @@ export default function DashBoardView() {
       <Grid container spacing={1}>
         <Grid xs={6} md={2}>
           <DashBoardWidgetSummary
-            title="Quaterly Sales"
+            title="Quaterly Revenue"
             subtitle="Q1"
             percent={2.6}
             total={18765231}
@@ -47,7 +47,7 @@ export default function DashBoardView() {
         </Grid>
         <Grid xs={6} md={2}>
           <DashBoardWidgetSummary
-            title="Monthly Sales"
+            title="Monthly Revenue"
             subtitle="Current Month"
             percent={-0.2}
             total={4876314}
@@ -101,7 +101,7 @@ export default function DashBoardView() {
         </Grid>
         <Grid xs={12} md={6}>
           <DashBoardStatistics
-            title="Total Revenue"
+            title="Monthly Revenue by Year"
             subheader="2021-2023 (In USD)"
             colors={totalSalesColors}
             chart={{
