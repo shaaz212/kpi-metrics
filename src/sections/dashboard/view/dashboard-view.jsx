@@ -162,7 +162,7 @@ export default function DashBoardView() {
         </Grid>
         <Grid xs={12} md={3}>
           <RevenueDonut
-            title="Total Revenue"
+            title="Total Revenue by Year"
             chart={{
               series: [
                 { label: '2021', value: 12244 },

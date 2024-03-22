@@ -74,7 +74,7 @@ export default function SalesPersonView() {
             }}
           />
         </Grid>
-        <Grid xs={12} md={4}>
+        <Grid xs={12} md={4.5}>
           <Card
             sx={{
               height: 412,
@@ -93,7 +93,20 @@ export default function SalesPersonView() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid xs={12} md={5}>
+        <Grid xs={12} md={3}>
+          <SalesWinRatePie
+            title="Win Rate"
+            chart={{
+              series: [
+                { label: 'Aiswarya Giri', value: 4344 },
+                { label: 'vivian', value: 5435 },
+                { label: 'jithin', value: 1443 },
+                { label: 'akhila', value: 4443 },
+              ],
+            }}
+          />
+        </Grid>
+        <Grid xs={12} md={4.5}>
           <Card
             sx={{
               height: 412,
@@ -112,19 +125,6 @@ export default function SalesPersonView() {
               />
             </CardContent>
           </Card>
-        </Grid>
-        <Grid xs={12} md={3}>
-          <SalesWinRatePie
-            title="Win Rate"
-            chart={{
-              series: [
-                { label: 'Aiswarya Giri', value: 4344 },
-                { label: 'vivian', value: 5435 },
-                { label: 'jithin', value: 1443 },
-                { label: 'akhila', value: 4443 },
-              ],
-            }}
-          />
         </Grid>
         <Grid xs={12} md={4.5}>
           <SalesPersonRates
