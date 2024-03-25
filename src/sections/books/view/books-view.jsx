@@ -90,11 +90,11 @@ export default function BooksView() {
             chart={{
               colors: theme.palette.warning.main,
               series: [
-                { label: 'Aishwarya', value: 400 },
-                { label: 'Akhila', value: 430 },
-                { label: 'Jithin', value: 448 },
-                { label: 'Sajan', value: 470 },
-                { label: 'Anni', value: 448 },
+                { label: 'Acronis', value: 400 },
+                { label: 'Bitdefender', value: 430 },
+                { label: 'Zimbra', value: 448 },
+                { label: 'ModusCloud', value: 470 },
+                { label: 'DropSuite', value: 448 },
               ],
             }}
           />
@@ -106,11 +106,11 @@ export default function BooksView() {
             chart={{
               colors: theme.palette.success.main,
               series: [
-                { label: 'Aishwarya', value: 400 },
-                { label: 'Akhila', value: 430 },
-                { label: 'Jithin', value: 448 },
-                { label: 'Sajan', value: 470 },
-                { label: 'Anni', value: 448 },
+                { label: 'Acronis', value: 400 },
+                { label: 'Bitdefender', value: 430 },
+                { label: 'Zimbra', value: 448 },
+                { label: 'ModusCloud', value: 470 },
+                { label: 'DropSuite', value: 448 },
               ],
             }}
           />
@@ -124,11 +124,15 @@ export default function BooksView() {
             <CardHeader title="Region Sales by Type" />
             <CardContent>
               <BooksRegionSales
+                colors={[
+                  theme.palette.success.main,
+                  theme.palette.info.main,
+                  theme.palette.error.main,
+                ]}
                 series={[
-                  { name: 'Acronis', data: [44, 55, 41, 67, 22] },
-                  { name: 'Bit Defender', data: [13, 23, 20, 13, 27] },
-                  { name: 'DropSuite', data: [11, 17, 15, 21, 14] },
-                  { name: 'NEVERFAIL', data: [21, 25, 13, 22, 8] },
+                  { name: 'MSP', data: [44, 55, 41] },
+                  { name: 'New', data: [13, 23, 20] },
+                  { name: 'Revenue', data: [11, 17, 15] },
                 ]}
               />
             </CardContent>

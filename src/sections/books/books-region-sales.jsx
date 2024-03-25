@@ -4,8 +4,9 @@ import Chart, { useChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 
-export default function BooksRegionSales({ series, title }) {
+export default function BooksRegionSales({ series, colors }) {
   const chartOptions = useChart({
+    colors,
     chart: {
       stacked: true,
       zoom: {
@@ -14,7 +15,7 @@ export default function BooksRegionSales({ series, title }) {
     },
     legend: {
       itemMargin: {
-        vertical: 2,
+        vertical: 5,
       },
       horizontalAlign: 'right',
       position: 'top',
@@ -23,8 +24,8 @@ export default function BooksRegionSales({ series, title }) {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '40%',
-        barHeight: '40%',
+        columnWidth: '20%',
+        endingShape: 'rounded',
       },
     },
     stroke: {
@@ -32,7 +33,7 @@ export default function BooksRegionSales({ series, title }) {
     },
     xaxis: {
       type: 'string',
-      categories: ['Aiswarya', 'vivian', 'akhila', 'jithin', 'sajan'],
+      categories: ['UAE', 'Qatar', 'Bahrain'],
     },
   });
 
@@ -43,5 +44,5 @@ export default function BooksRegionSales({ series, title }) {
 
 BooksRegionSales.propTypes = {
   series: PropTypes.array,
-  title: PropTypes.string,
+  colors: PropTypes.string,
 };
