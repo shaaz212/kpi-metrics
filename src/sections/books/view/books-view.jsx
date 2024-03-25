@@ -73,7 +73,7 @@ export default function BooksView() {
         </Grid>
         <Grid xs={12} md={3}>
           <BooksRevenueDonut
-            title="Total Revenue by Year"
+            title="Total Revenue by Type"
             chart={{
               series: [
                 { label: 'MSP', value: 12244 },
@@ -121,7 +121,7 @@ export default function BooksView() {
               height: 412,
             }}
           >
-            <CardHeader title="Total Revenue by Product" />
+            <CardHeader title="Region Sales by Type" />
             <CardContent>
               <BooksRegionSales
                 series={[
