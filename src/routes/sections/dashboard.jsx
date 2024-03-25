@@ -64,6 +64,7 @@ const BlankPage = lazy(() => import('src/pages/dashboard/blank'));
 
 // kpi
 const OverviewKPIPage = lazy(() => import('src/pages/kpi-dashboard/index'));
+const OverviewBooksPage = lazy(() => import('src/pages/kpi-books/index'));
 
 // kpi sales
 const SalePersonKpiPage = lazy(() => import('src/pages/kpi-sales/person'));
@@ -86,6 +87,7 @@ export const dashboardRoutes = [
     children: [
       { element: <IndexPage />, index: true },
       { path: 'kpi-dashboard', element: <OverviewKPIPage /> },
+      { path: 'books', element: <OverviewBooksPage /> },
       { path: 'ecommerce', element: <OverviewEcommercePage /> },
       { path: 'analytics', element: <OverviewAnalyticsPage /> },
       { path: 'banking', element: <OverviewBankingPage /> },

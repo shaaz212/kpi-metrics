@@ -174,7 +174,7 @@ export default function DashBoardView() {
         </Grid>
         <Grid xs={12} md={3}>
           <RevenueTypePie
-            title="Revenue by Type"
+            title="Total Revenue by Type"
             chart={{
               series: [
                 { label: 'Renewal', value: 4344 },

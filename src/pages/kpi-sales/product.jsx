@@ -8,7 +8,7 @@ export default function SalesProductDashboardPage() {
   return (
     <>
       <Helmet>
-        <title>Sales</title>
+        <title>Sales Product</title>
       </Helmet>
       <SalesProductView />
     </>

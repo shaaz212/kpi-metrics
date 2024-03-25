@@ -60,6 +60,11 @@ export function useNavData() {
             path: paths.dashboard.general.kpiDashBoard,
             icon: ICONS.dashboard,
           },
+          {
+            title: t('books'),
+            path: paths.dashboard.general.books,
+            icon: ICONS.invoice,
+          },
           // {
           //   title: t('app'),
           //   path: paths.dashboard.root,
@@ -108,7 +113,6 @@ export function useNavData() {
               { title: t('product'), path: paths.dashboard.sales.product },
             ],
           },
-
           // USER
           // {
           //   title: t('user'),
