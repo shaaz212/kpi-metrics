@@ -52,6 +52,7 @@ export default function WinRatePie({ title, subheader, chart, ...other }) {
     },
     tooltip: {
       fillSeriesColor: false,
+
       y: {
         formatter: (value) => fNumber(value),
         title: {
@@ -59,10 +60,19 @@ export default function WinRatePie({ title, subheader, chart, ...other }) {
         },
       },
     },
+    dataLabels: {
+      enabled: true,
+      dropShadow: {
+        enabled: false,
+      },
+      style: {
+        fontSize: '10px',
+      },
+    },
     plotOptions: {
       pie: {
         donut: {
-          size: '75%',
+          size: '65%',
           labels: {
             value: {
               formatter: (value) => fNumber(value),

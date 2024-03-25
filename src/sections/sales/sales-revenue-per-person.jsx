@@ -24,8 +24,17 @@ export default function SalesRevenuePerPerson({ series, title }) {
         horizontal: title !== 'vertical',
         columnWidth: '40%',
         barHeight: '40%',
+        dataLabels: {
+          total: {
+            enabled: true,
+            style: {
+              color: '#000',
+            },
+          },
+        },
       },
     },
+
     stroke: {
       show: false,
     },
