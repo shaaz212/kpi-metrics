@@ -28,7 +28,7 @@ export default function SalesRevenuePerPerson({ series, title }) {
           total: {
             enabled: true,
             style: {
-              color: '#000',
+              color: '#fff',
             },
           },
         },

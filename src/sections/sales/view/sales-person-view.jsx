@@ -115,7 +115,7 @@ export default function SalesPersonView() {
         </Grid>
         <Grid xs={12} md={3}>
           <SalesWinRatePie
-            title="New Partner Acquisition"
+            title="Win Rate"
             chart={{
               series: [
                 { label: 'Aiswarya Giri', value: 4344 },
@@ -167,7 +167,7 @@ export default function SalesPersonView() {
         </Grid>
         <Grid xs={12} md={3}>
           <WinRatePie
-            title="Win Rate"
+            title="New Partner Acquisition"
             chart={{
               series: [
                 { label: 'Aiswarya', value: 100 },
