@@ -13,6 +13,9 @@ export default function BooksRevenueGrowthRate({ title, subheader, chart, ...oth
 
   const chartOptions = useChart({
     colors,
+    stroke: {
+      width: [0, 4],
+    },
     plotOptions: {
       bar: {
         columnWidth: '16%',
@@ -25,6 +28,19 @@ export default function BooksRevenueGrowthRate({ title, subheader, chart, ...oth
     xaxis: {
       type: 'string',
     },
+    yaxis: [
+      {
+        title: {
+          text: 'Sales Revenue',
+        },
+      },
+      {
+        opposite: true,
+        title: {
+          text: 'Sales Count',
+        },
+      },
+    ],
     tooltip: {
       shared: true,
       intersect: false,
@@ -42,7 +58,7 @@ export default function BooksRevenueGrowthRate({ title, subheader, chart, ...oth
       enabledOnSeries: [1],
     },
     legend: {
-      show: false,
+      show: true,
     },
     ...options,
   });

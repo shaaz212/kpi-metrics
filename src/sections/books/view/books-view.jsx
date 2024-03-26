@@ -10,10 +10,24 @@ import CardContent from '@mui/material/CardContent';
 import { useSettingsContext } from 'src/components/settings';
 
 import BooksTopTen from '../books-top-10';
+import BooksTopTable from '../books-top-table';
 import BooksCharnRate from '../books-charn-rate';
 import BooksRegionSales from '../books-region-sales';
 import BooksRevenueDonut from '../books-revenue-donut';
 import BooksRevenueGrowthRate from '../books-revenue-growth-rate';
+
+const topPartners = [
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'abcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+  { name: 'bcd', product: 'abcd', invoiceId: 'abcd123', amount: '1000' },
+];
 
 export default function BooksView() {
   const settings = useSettingsContext();
@@ -43,13 +57,13 @@ export default function BooksView() {
               ],
               series: [
                 {
-                  name: 'Sales',
+                  name: 'Sales Revenue',
                   type: 'column',
                   fill: 'solid',
                   data: [23, 11, 22, 27],
                 },
                 {
-                  name: 'Trend',
+                  name: 'Sales Count',
                   type: 'line',
                   fill: 'solid',
                   data: [30, 25, 10, 30],
@@ -83,39 +97,35 @@ export default function BooksView() {
             }}
           />
         </Grid>
-        <Grid xs={12} md={3.5}>
+        <Grid xs={12} md={3}>
           <BooksTopTen
             title="Top 10 Partners in Sales"
             // subheader="(+43%) than last year"
             chart={{
               colors: theme.palette.warning.main,
               series: [
-                { label: 'Acronis', value: 400 },
-                { label: 'Bitdefender', value: 430 },
-                { label: 'Zimbra', value: 448 },
-                { label: 'ModusCloud', value: 470 },
-                { label: 'DropSuite', value: 448 },
+                { label: 'PartnerA', value: 400 },
+                { label: 'PartnerB', value: 430 },
+                { label: 'PartnerC', value: 448 },
+                { label: 'PartnerD', value: 470 },
+                { label: 'PartnerE', value: 448 },
               ],
             }}
           />
         </Grid>
-        <Grid xs={12} md={3.5}>
-          <BooksTopTen
-            title="Top 10 Deals"
-            // subheader="(+43%) than last year"
-            chart={{
-              colors: theme.palette.success.main,
-              series: [
-                { label: 'Acronis', value: 400 },
-                { label: 'Bitdefender', value: 430 },
-                { label: 'Zimbra', value: 448 },
-                { label: 'ModusCloud', value: 470 },
-                { label: 'DropSuite', value: 448 },
-              ],
-            }}
+        <Grid xs={12} md={6}>
+          <BooksTopTable
+            title="Top 5 deals"
+            tableData={topPartners}
+            tableLabels={[
+              { id: 'partnerName', label: 'Partner Name' },
+              { id: 'productName', label: 'Product Name' },
+              { id: 'invoiceId', label: 'Invoice id' },
+              { id: 'totalAmount', label: 'Amount' },
+            ]}
           />
         </Grid>
-        <Grid xs={12} md={5}>
+        <Grid xs={12} md={3}>
           <Card
             sx={{
               height: 412,
