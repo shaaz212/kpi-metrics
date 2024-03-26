@@ -27,6 +27,7 @@ export default function SalesRevenuePerPerson({ series, title }) {
         dataLabels: {
           total: {
             enabled: true,
+            offsetY: title !== 'vertical' ? 6 : 0,
             style: {
               color: '#fff',
             },

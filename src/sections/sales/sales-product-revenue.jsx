@@ -8,6 +8,7 @@ import Chart, { useChart } from 'src/components/chart';
 
 export default function SalesProductRevenue({ series }) {
   const theme = useTheme();
+
   const chartOptions = useChart({
     colors: [theme.palette.primary.main, theme.palette.warning.main, theme.palette.error.main],
     chart: {
@@ -28,6 +29,15 @@ export default function SalesProductRevenue({ series }) {
         horizontal: true,
         columnWidth: '10%',
         barHeight: '20%',
+        dataLabels: {
+          total: {
+            enabled: true,
+            offsetY: 6,
+            style: {
+              color: '#fff',
+            },
+          },
+        },
       },
     },
     stroke: {

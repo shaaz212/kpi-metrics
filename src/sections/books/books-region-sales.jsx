@@ -26,8 +26,17 @@ export default function BooksRegionSales({ series, colors }) {
         horizontal: false,
         columnWidth: '20%',
         endingShape: 'rounded',
+        dataLabels: {
+          total: {
+            enabled: true,
+            style: {
+              color: '#fff',
+            },
+          },
+        },
       },
     },
+
     stroke: {
       show: false,
     },

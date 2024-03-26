@@ -16,8 +16,8 @@ import { useSettingsContext } from 'src/components/settings';
 import SalesProductRevenue from '../sales-product-revenue';
 import SalesProductWinRate from '../sales-product-win-rate';
 import SalesProductPartners from '../sales-product-partners';
+import SalesProductRegion from '../sales-product-charn-rate';
 import SalesProductTotalDeal from '../sales-product-total-deal';
-import SalesProductCharnRate from '../sales-product-charn-rate';
 import SalesproductDealStages from '../sales-product-deal-stages';
 
 export default function SalesProductView() {
@@ -48,14 +48,17 @@ export default function SalesProductView() {
         </Grid>
         <Grid xs={12} md={5}>
           <Card sx={{ height: 412 }}>
-            <CardHeader title="Churn Rate Trend Analysis" />
+            <CardHeader title="Product Sales by Region" />
             <CardContent>
-              <SalesProductCharnRate
+              <SalesProductRegion
                 series={[
-                  { name: 'Churn Rate', data: [31, 40, 28, 51, 42, 109, 100, 62, 81, 29, -12, 19] },
                   {
-                    name: 'Moving Avg\n(3 months)',
-                    data: [11, 22, 35, 32, 34, 52, 41, -18, 73, 22, 93, 82],
+                    data: [
+                      { x: 'UAE', y: 100 },
+                      { x: 'Qatar', y: 20 },
+                      { x: 'Oman', y: 30 },
+                      { x: 'Baharain', y: 50 },
+                    ],
                   },
                 ]}
               />
@@ -75,7 +78,7 @@ export default function SalesProductView() {
             }}
           />
         </Grid>
-        <Grid xs={12} md={3}>
+        <Grid xs={12} md={4}>
           <SalesProductTotalDeal
             title="Total Deals Won"
             // subheader="(+43%) than last year"
@@ -91,23 +94,21 @@ export default function SalesProductView() {
             }}
           />
         </Grid>
-        <Grid xs={12} md={5}>
+        <Grid xs={12} md={4}>
           <Card sx={{ height: 412 }}>
-            <CardHeader title="Total Partners v/s Unique " />
-            <CardContent>
-              <SalesProductPartners
-                series={[
-                  {
-                    name: 'Total',
-                    data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 87, 76, 67],
-                  },
-                  {
-                    name: 'Unique',
-                    data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 72, 66, 97],
-                  },
-                ]}
-              />
-            </CardContent>
+            <CardHeader title="Top 10 Product items by Sales" />
+            <SalesProductPartners
+              chart={{
+                colors: theme.palette.info.main,
+                series: [
+                  { label: 'Acronis', value: 400 },
+                  { label: 'Bit defender', value: 430 },
+                  { label: 'DropSuite', value: 448 },
+                  { label: 'NEVERFAIL', value: 470 },
+                  { label: 'Zimbra', value: 448 },
+                ],
+              }}
+            />
           </Card>
         </Grid>
         <Grid xs={12} md={4}>
