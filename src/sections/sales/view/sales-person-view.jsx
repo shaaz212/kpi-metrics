@@ -15,11 +15,11 @@ import { useSettingsContext } from 'src/components/settings';
 import WinRatePie from '../winrate-pie';
 import SalesSummary from '../sales-summary';
 import SalesWinRate from '../sales-win-rate';
+import SalesAvgRevenue from '../sales-avg-revenue';
 import SalesWinRatePie from '../sales-win-rate-pie';
 import SalesPersonRates from '../sales-person-rates';
 import SalesWidgetSummary from '../sales-widget-summary';
 import SalesRevenuePerPerson from '../sales-revenue-per-person';
-import SalesRevenueGrowthRate from '../sales-revenue-growth-rate';
 import SalesPartnerAcquisition from '../sales-partner-acquisition';
 
 export default function SalesPersonView() {
@@ -75,40 +75,30 @@ export default function SalesPersonView() {
           />
         </Grid>
         <Grid xs={12} md={4.5}>
-          <Card
-            sx={{
-              height: 412,
+          <SalesPersonRates
+            title="Total deals Won"
+            // subheader="(+43%) than last year"
+            chart={{
+              colors: theme.palette.warning.main,
+              series: [
+                { label: 'Aishwarya', value: 400 },
+                { label: 'Akhila', value: 430 },
+                { label: 'Jithin', value: 448 },
+                { label: 'Sajan', value: 470 },
+                { label: 'Anni', value: 448 },
+              ],
             }}
-          >
-            <CardHeader title="Total Revenue by Product" />
-            <CardContent>
-              <SalesRevenuePerPerson
-                series={[
-                  { name: 'Acronis', data: [44, 55, 41, 67, 22] },
-                  { name: 'Bit Defender', data: [13, 23, 20, 13, 27] },
-                  { name: 'DropSuite', data: [11, 17, 15, 21, 14] },
-                  { name: 'NEVERFAIL', data: [21, 25, 13, 22, 8] },
-                ]}
-              />
-            </CardContent>
-          </Card>
+          />
         </Grid>
         <Grid xs={12} md={4.5}>
-          <Card
-            sx={{
-              height: 412,
-            }}
-          >
-            <CardHeader title="Total Revenue by Region" />
+          <Card sx={{ height: 412 }}>
+            <CardHeader title="Average vs Total Revenue Analysis" />
             <CardContent>
-              <SalesRevenuePerPerson
+              <SalesAvgRevenue
                 series={[
-                  { name: 'UAE', data: [44, 55, 41, 67, 22] },
-                  { name: 'Qatar', data: [13, 23, 20, 13, 27] },
-                  { name: 'Kuwait', data: [11, 17, 15, 21, 14] },
-                  { name: 'Jordan', data: [21, 25, 13, 22, 8] },
+                  { name: 'Total Revenue', data: [31, 40, -20, 51, 42, 90, 80] },
+                  { name: 'Average revenue', data: [20, 30, -10, 41, 32, 70, 50] },
                 ]}
-                title="vertical"
               />
             </CardContent>
           </Card>
@@ -127,43 +117,44 @@ export default function SalesPersonView() {
           />
         </Grid>
         <Grid xs={12} md={4.5}>
-          <SalesPersonRates
-            title="Avg Revenue"
-            // subheader="(+43%) than last year"
-            chart={{
-              colors: theme.palette.warning.main,
-              series: [
-                { label: 'Aishwarya', value: 400 },
-                { label: 'Akhila', value: 430 },
-                { label: 'Jithin', value: 448 },
-                { label: 'Sajan', value: 470 },
-                { label: 'Anni', value: 448 },
-              ],
+          <Card
+            sx={{
+              height: 412,
             }}
-          />
+          >
+            <CardHeader title="Total Revenue by Product" />
+            <CardContent>
+              <SalesRevenuePerPerson
+                categories={['Aiswarya', 'vivian', 'akhila', 'jithin', 'sajan']}
+                series={[
+                  { name: 'Acronis', data: [44, 55, 41, 67, 22] },
+                  { name: 'Bit Defender', data: [13, 23, 20, 13, 27] },
+                  { name: 'DropSuite', data: [11, 17, 15, 21, 14] },
+                  { name: 'NEVERFAIL', data: [21, 25, 13, 22, 8] },
+                ]}
+              />
+            </CardContent>
+          </Card>
         </Grid>
         <Grid xs={12} md={4.5}>
-          <SalesRevenueGrowthRate
-            title="Total deals won"
-            // subheader="(+43%) than last year"
-            chart={{
-              labels: ['Aiswarya Giri', 'Jithin', 'Vivian', 'Akhila'],
-              series: [
-                {
-                  name: 'Sales',
-                  type: 'column',
-                  fill: 'solid',
-                  data: [23, 11, 22, 27],
-                },
-                {
-                  name: 'Trend',
-                  type: 'line',
-                  fill: 'solid',
-                  data: [30, 25, 10, 30],
-                },
-              ],
+          <Card
+            sx={{
+              height: 412,
             }}
-          />
+          >
+            <CardHeader title="Total Revenue by Type" />
+            <CardContent>
+              <SalesRevenuePerPerson
+                categories={['Aiswarya', 'vivian', 'akhila', 'jithin', 'sajan']}
+                series={[
+                  { name: 'MSP', data: [44, 55, 41, 67, 22] },
+                  { name: 'New', data: [13, 23, 20, 13, 27] },
+                  { name: 'Renewal', data: [11, 17, 15, 21, 14] },
+                ]}
+                title="vertical"
+              />
+            </CardContent>
+          </Card>
         </Grid>
         <Grid xs={12} md={3}>
           <WinRatePie

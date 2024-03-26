@@ -4,7 +4,7 @@ import Chart, { useChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 
-export default function SalesRevenuePerPerson({ series, title }) {
+export default function SalesRevenuePerPerson({ series, title, categories }) {
   const chartOptions = useChart({
     chart: {
       stacked: true,
@@ -41,7 +41,7 @@ export default function SalesRevenuePerPerson({ series, title }) {
     },
     xaxis: {
       type: 'string',
-      categories: ['Aiswarya', 'vivian', 'akhila', 'jithin', 'sajan'],
+      categories,
     },
   });
 
@@ -53,4 +53,5 @@ export default function SalesRevenuePerPerson({ series, title }) {
 SalesRevenuePerPerson.propTypes = {
   series: PropTypes.array,
   title: PropTypes.string,
+  categories: PropTypes.array,
 };
